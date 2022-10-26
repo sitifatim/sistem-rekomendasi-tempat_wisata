@@ -67,3 +67,8 @@ Gambar 5. Rekomendasi Tempat Wisata Baru
 
 Berdasarkan gambar 5, dapat dilihat bahwa model berhasil merekomendasikan tempat baru. Collaborative Filtering cukup mudah digunakan dan cepat dalam pemrosesannya akan tetapi mungkin terbatas pada filtering beberapa variabel saja. Untuk filtering dengan lebih banyak variabel, disarankan untuk dapat mecoba metode lain selain Collaborative Filtering.
 
+## **References**
+[1] Iwan Setiawan, "POTENSI DESTINASI WISATA DI INDONESIA MENUJU KEMANDIRIAN
+EKONOMI", PROSIDING SEMINAR NASIONAL MULTI DISIPLIN ILMU & CALL FOR PAPERS UNISBANK (SENDI_U)
+
+[2] Adenisa Aulia Rahma, "Potensi Sumber Daya Alam dalam Mengembangkan Sektor Pariwisata di Indonesia", Jurnal Nasional Pariwisata, 2020.
