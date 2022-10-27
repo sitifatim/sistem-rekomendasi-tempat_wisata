@@ -24,28 +24,21 @@ Dataset yang digunakan merupakan dataset yang berasal dari Kaggle dengan judul "
 Ada beberapa tahap pada tahapan data preparation yaitu sebagai berikut:
 * Encoding fitur User_Id dan Place_Id ke bentuk integer. Hal ini dilakukan agar data dapat ditraining model.
 * Mapping User_Id dan Place_Id ke dataframe bertujuan untuk memetakan dua fitur tersebut ke dataframe.
-* Pengecekan beberapa item seperti jumlah user, jumlah tempat, dan mengubah nilai rating menjadi float.
-
-![ScreenShot Tool -20221027002601](https://user-images.githubusercontent.com/99231159/198098682-6213feed-c681-4c59-9f75-4e5bfe3342b5.png)
-
-Gambar 1. Pengecekan Item
-
-* Pembagian dataset ke data training dan data validation. Data training akan dijadikan data untuk saat training model berlangsung sedangkan data validasi adalah untuk memvalidasi model yang sudah terbentuk (testing). Sebelum dilakukan pembagian, dataset terlebih dahulu diacak terlebih dahulu agar model lebih terbiasa dengan data acak atau tidak berurutan. Selanjutnya dataset akan dibagi dengan rasio 80:20. Gambar 2 merupakan tampilan data training yang nantinya akan ditraining model.
-
-![ScreenShot Tool -20221027003050](https://user-images.githubusercontent.com/99231159/198099003-c99e261b-797d-4dd1-868c-953ca2eafa0d.png)
-
-Gambar 2. Tampilan Data Training
+* Pengecekan beberapa item seperti jumlah user, jumlah tempat, dan mengubah nilai rating menjadi float. Dari pengecekan item yang telah dilakukan, didapatkan hasil jumlah user sebanyak 300 user, jumlah tempat sebanyak 437 tempat, minimum rating yang diberikan adalah 1, dan maksimum rating yang diberikan adalah 5.
+* Pembagian dataset ke data training dan data validation. Data training akan dijadikan data untuk saat training model berlangsung sedangkan data validasi adalah untuk memvalidasi model yang sudah terbentuk (testing). Sebelum dilakukan pembagian, dataset terlebih dahulu diacak terlebih dahulu agar model lebih terbiasa dengan data acak atau tidak berurutan. Selanjutnya dataset akan dibagi dengan rasio 80:20. 
 
 ## **Modeling**
 
-Pada tahap ini, model menghitung skor kecocokan antara user dan tempat dengan teknik embedding. Pertama, kita melakukan proses embedding terhadap data user dan tempat. Selanjutnya, lakukan operasi perkalian dot product antara embedding user dan tempat. Skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi sigmoid. Selanjutnya, melakukan compile dengan model yang sudah dibuat dan kemudian melakukan proses training. Hasil training model dapat dilihat pada gambar 3 berikut.
+Pada tahap ini, model menghitung skor kecocokan antara user dan tempat dengan teknik embedding. Pertama, melakukan proses embedding terhadap data user dan tempat. Selanjutnya, lakukan operasi perkalian dot product antara embedding user dan tempat. Skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi sigmoid. Selanjutnya, melakukan compile dengan model yang sudah dibuat dan kemudian melakukan proses training. Sebelum dilakukan proses training, ada beberapa parameter model yang ditambahkan dan yaitu sebagai berikut:
 
-![ScreenShot Tool -20221027003432](https://user-images.githubusercontent.com/99231159/198099076-eb6b2d29-4094-449f-a387-95058e34e0c1.png)
+Tabel 1. Parameter Model
 
-Gambar 3. Hasil Training
-
-Dari gambar 3 dapat dilihat bahwa proses komputasi yaitu sebanyak 100 epoch dan menggunakan metrik akurasi rms. Hasil akhir rms training yaitu 0,3314 dan rms validasi yaitu 0,3547. 
-
+| Parameter   |Cara Kerja|
+|:------------|:------------------|
+|recommendernet|bekerja membangun sebuah grup layer menjadi objek dengan inferensi fitur-fitur seperti input yang digunakan, layer yang digunakan, hingga fungsi aktivasi yang digunakan. Pada model ini menggunakan input num_place dan num_resto. Layer yang digunakan sebanyak 4 layer embedding. Aktivasi yang digunakan adalah aktivasi sigmoid karena output yang diinginkan adalah bukan multiclass|
+|loss         |loss digunakan untuk mengetahui seberapa dekat model dapat memprediksi hal baru. Loss yang digunakan pada model ini adalah Binary Crossentropy karena output model adalah binary class|
+|optimizer    |berfungsi untuk mengoptimalkan prediksi model. Optimizer yang digunakan ialah Adam karena merupakan optimizer ter-update dibandingkan RMSprop dan SGD|
+|metric evaluation| berfungsi untuk menampilkan error dari prediksi model dan aktual value. Metric evaluation yang digunakan adalah RMS karena mudah digunakan dan cukup sensitif perubahannya|
 ## **Evaluation**
 
 Evaluasi sistem rekomendasi mencakup dua hal yaitu evaluasi model dengan visualisasi hasil training model dan percobaan sistem rekomendasi untuk rekomendasi tempat baru. Berikut merupakan tahapan evaluasi:
