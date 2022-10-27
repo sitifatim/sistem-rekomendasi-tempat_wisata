@@ -27,8 +27,8 @@ Ada beberapa tahap pada tahapan data preparation yaitu sebagai berikut:
 * Pengecekan beberapa item seperti jumlah user, jumlah tempat, dan mengubah nilai rating menjadi float. Dari pengecekan item yang telah dilakukan, didapatkan hasil jumlah user sebanyak 300 user, jumlah tempat sebanyak 437 tempat, minimum rating yang diberikan adalah 1, dan maksimum rating yang diberikan adalah 5.
 * Pembagian dataset ke data training dan data validation. Data training akan dijadikan data untuk saat training model berlangsung sedangkan data validasi adalah untuk memvalidasi model yang sudah terbentuk (testing). Sebelum dilakukan pembagian, dataset terlebih dahulu diacak terlebih dahulu agar model lebih terbiasa dengan data acak atau tidak berurutan. Selanjutnya dataset akan dibagi dengan rasio 80:20. 
 
-## **Modeling**
-
+## **Modeling and Result**
+### Modeling
 Pada tahap ini, model menghitung skor kecocokan antara user dan tempat dengan teknik embedding. Pertama, melakukan proses embedding terhadap data user dan tempat. Selanjutnya, lakukan operasi perkalian dot product antara embedding user dan tempat. Skor kecocokan ditetapkan dalam skala [0,1] dengan fungsi aktivasi sigmoid. Selanjutnya, melakukan compile dengan model yang sudah dibuat dan kemudian melakukan proses training. Sebelum dilakukan proses training, ada beberapa parameter model yang ditambahkan dan yaitu sebagai berikut:
 
 Tabel 1. Parameter Model
@@ -39,26 +39,24 @@ Tabel 1. Parameter Model
 |loss         |loss digunakan untuk mengetahui seberapa dekat model dapat memprediksi hal baru. Loss yang digunakan pada model ini adalah Binary Crossentropy karena output model adalah binary class|
 |optimizer    |berfungsi untuk mengoptimalkan prediksi model. Optimizer yang digunakan ialah Adam karena merupakan optimizer ter-update dibandingkan RMSprop dan SGD|
 |metric evaluation| berfungsi untuk menampilkan error dari prediksi model dan aktual value. Metric evaluation yang digunakan adalah RMS karena mudah digunakan dan cukup sensitif perubahannya|
+
+### Result
+Hasil dari model yang telah ditraining adalah model berhasil melakukan rekomendasi 10 tempat wisata baru yang belum dikunjungi user. Adapun hasil rekomendasi dapat dilihat pada Gambar 1 berikut.
+![ScreenShot Tool -20221027004747](https://user-images.githubusercontent.com/99231159/198099300-74357a38-8dcf-461c-9454-ca79ae18b13c.png)
+
+Gambar 1. Rekomendasi Tempat Wisata Baru
+
 ## **Evaluation**
 
-Evaluasi sistem rekomendasi mencakup dua hal yaitu evaluasi model dengan visualisasi hasil training model dan percobaan sistem rekomendasi untuk rekomendasi tempat baru. Berikut merupakan tahapan evaluasi:
-
-### Visualisasi Model 
+Evaluasi sistem rekomendasi dilakukan untuk mengevaluasi seberapa baik atau seberapa bagus model bekerja ketika proses training. Gambar 2 merupakan visualisasi sistem rekomendasi pada saat proses training.
 
 ![ScreenShot Tool -20221027003745](https://user-images.githubusercontent.com/99231159/198099128-e31885f7-8ac7-43d1-bd64-71a6fd4199d4.png)
 
-Gambar 4. Visualisasi Hasil Training
+Gambar 2. Visualisasi Hasil Training
 
-Berdasarkan visualisasi diatas, dapat dilihat bahwa proses training mengalami naik turun yang cukup berubah-ubah atau tidak konstan dibandingan proses testing. Akan tetapi, meskipun demikian, dapat dilihat pula bahwa meskipun pada proses trainingnya tidak cukup halus, hasil akhir dari training memiliki nilai error dibawah 0,34 dan pada validasi sebesar 0,36 yang mana tidak terlalu buruk untuk sistem rekomendasi. 
+Berdasarkan visualisasi diatas, dapat dilihat bahwa proses training mengalami naik turun yang cukup berubah-ubah atau tidak konstan dibandingan proses testing dan model mengalami keadaan underfit. Model Underfit adalah keadaan dimana hasil RMS data training lebih rendah daripada hasil RMS data testing. Akan tetapi, meskipun demikian, hasil akhir dari training memiliki nilai error dibawah 0,34 dan pada validasi sebesar 0,36 yang mana tidak terlalu buruk untuk sistem rekomendasi. Untuk mendapatkan hasi yang lebih maksimal atau mendapatkan goodfit model, dapat dilakukan hyper parameter tuning lagi untuk dapat memperbaiki model.
 
-### Percobaan Rekomendasi Tempat Baru
-Langkah ini dilakukan untuk melihat performa model apakah dapat merekomendasikan tempat baru atau tidak. Mengingat yang akan direkomendasikan merupakan rekomendasi tempat, maka akan dibuat variabel baru yaitu place_have_not_visit yang berisikan daftar tempat yang belum pernah dikunjungi user. Hasil dari tahap ini dapat dilihat pada gambar 5.
-
-![ScreenShot Tool -20221027004747](https://user-images.githubusercontent.com/99231159/198099300-74357a38-8dcf-461c-9454-ca79ae18b13c.png)
-
-Gambar 5. Rekomendasi Tempat Wisata Baru
-
-Berdasarkan gambar 5, dapat dilihat bahwa model berhasil merekomendasikan tempat baru. Collaborative Filtering cukup mudah digunakan dan cepat dalam pemrosesannya akan tetapi mungkin terbatas pada filtering beberapa variabel saja. Untuk filtering dengan lebih banyak variabel, disarankan untuk dapat mecoba metode lain selain Collaborative Filtering.
+Dari pembuatan model yang telah dilakukan dapat disimpulkan bahwa Collaborative Filtering cukup mudah digunakan dan cepat dalam pemrosesannya akan tetapi mungkin terbatas pada filtering beberapa variabel saja. Untuk filtering dengan lebih banyak variabel, disarankan untuk dapat mecoba metode lain selain Collaborative Filtering.
 
 ## **References**
 [1] Iwan Setiawan, "POTENSI DESTINASI WISATA DI INDONESIA MENUJU KEMANDIRIAN
