@@ -42,6 +42,7 @@ Tabel 1. Parameter Model
 
 ### Result
 Hasil dari model yang telah ditraining adalah model berhasil melakukan rekomendasi 10 tempat wisata baru yang belum dikunjungi user. Adapun hasil rekomendasi dapat dilihat pada Gambar 1 berikut.
+
 ![ScreenShot Tool -20221027004747](https://user-images.githubusercontent.com/99231159/198099300-74357a38-8dcf-461c-9454-ca79ae18b13c.png)
 
 Gambar 1. Rekomendasi Tempat Wisata Baru
