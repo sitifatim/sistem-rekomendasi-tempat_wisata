@@ -37,15 +37,26 @@ Tabel 1. Parameter Model
 |:------------|:------------------|
 |recommendernet|bekerja membangun sebuah grup layer menjadi objek dengan inferensi fitur-fitur seperti input yang digunakan, layer yang digunakan, hingga fungsi aktivasi yang digunakan. Pada model ini menggunakan input num_place dan num_resto. Layer yang digunakan sebanyak 4 layer embedding. Aktivasi yang digunakan adalah aktivasi sigmoid karena output yang diinginkan adalah bukan multiclass|
 |loss         |loss digunakan untuk mengetahui seberapa dekat model dapat memprediksi hal baru. Loss yang digunakan pada model ini adalah Binary Crossentropy karena output model adalah binary class|
-|optimizer    |berfungsi untuk mengoptimalkan prediksi model. Optimizer yang digunakan ialah Adam karena merupakan optimizer ter-update dibandingkan RMSprop dan SGD|
+|optimizer    |berfungsi untuk mengoptimalkan prediksi model. Optimizer yang digunakan ialah Adam karena merupakan optimizer ter-update dibandingkan RMSprop dan SGD. Adapun learning rate yang digunakan adalah 0,001|
 |metric evaluation| berfungsi untuk menampilkan error dari prediksi model dan aktual value. Metric evaluation yang digunakan adalah RMS karena mudah digunakan dan cukup sensitif perubahannya|
 
 ### Result
-Hasil dari model yang telah ditraining adalah model berhasil melakukan rekomendasi 10 tempat wisata baru yang belum dikunjungi user. Adapun hasil rekomendasi dapat dilihat pada Gambar 1 berikut.
+Hasil dari model yang telah ditraining adalah model berhasil melakukan rekomendasi top 10 tempat wisata baru yang belum dikunjungi user. Adapun hasil rekomendasi dapat dilihat pada Tabel 2 berikut.
 
-![ScreenShot Tool -20221027004747](https://user-images.githubusercontent.com/99231159/198099300-74357a38-8dcf-461c-9454-ca79ae18b13c.png)
+Tabel 2. Rekomendasi Top 10 Tempat Wisata Baru
+|No|Nama Tempat Wisata|Lokasi Tempat Wisata|
+|-|:------------------|:-------------------|
+|1|Masjid Istiqlal    | Jakarta|
+|2|Alive Musium Ancol|Jakarta|
+|3|Puncak Pinus Becici|Yogyakarta|
+|4|Jogja Eksotarium|Yogyakarta|
+|5|Pantai Wediombo|Yogyakarta|
+|6|Pantai Kesirat|Yogyakarta|
+|7|Tafso Barn|Bandung|
+|8|Kota Mini |Bandung|
+|9|Chingu Caffe Little Seoul|Bandung|
+|10|Gua Maria Kerep Ambarawa|Semarang|
 
-Gambar 1. Rekomendasi Tempat Wisata Baru
 
 ## **Evaluation**
 
