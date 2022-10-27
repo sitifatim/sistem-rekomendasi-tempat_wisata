@@ -1,5 +1,3 @@
-# Laporan Proyek Machine Learning - Siti Fatimatuzzahro
-
 ## Project Overview
 ![gambar](https://th.bing.com/th/id/OIP.4x_aEG3I8M8gropN1eV0BwHaC5?pid=ImgDet&rs=1)
 
@@ -15,7 +13,7 @@ Indonesia merupakan negara kepulauan yang memiliki ribuan tempat wisata menawan.
 * Metode sistem rekomendasi yang akan dibuat ialah menggunakan Collaborative Filtering dimana mengandalkan model-based untuk merekomendasikan hal baru pada pengguna
 
 ## **Data Understanding**
-Dataset yang digunakan merupakan dataset yang berasal dari Kaggle dengan judul "Indonesia Tourism Destination" yang dapat diakses pada [link](https://www.kaggle.com/datasets/aprabowo/indonesia-tourism-destination?select=tourism_with_id.csv) ini. Dataset ini mengumpulkan destinasi-destinasi wisata yang dikumpulkan dari lima kota besar di Indonesia diantaranya adalah Jakarta, Semarang, Bandung, Yogyakarta, dan Surabaya. Data-data tersebut dikumpulkan oleh Tim GetLoc untuk keperluan Capstone Bangkit Academy 2021. Adapun jumlah total dari dataset ialah sebanyak 10.000 data berisikan variabel-variable yaitu dummy Id pengunjung (User_Id), Id tempat wisata (Place_Id), dan rating tempat wisata (Place_Ratings). Deskripsi tentang variabel-variabel tersebut ialah sebagai berikut:
+Dataset yang digunakan merupakan dataset yang berasal dari Kaggle dengan judul "Indonesia Tourism Destination" yang dapat diakses pada [link ini](https://www.kaggle.com/datasets/aprabowo/indonesia-tourism-destination?select=tourism_with_id.csv). Dataset ini mengumpulkan destinasi-destinasi wisata yang dikumpulkan dari lima kota besar di Indonesia diantaranya adalah Jakarta, Semarang, Bandung, Yogyakarta, dan Surabaya. Data-data tersebut dikumpulkan oleh Tim GetLoc untuk pembuatan Aplikasi Getloc, merupakan bagian dari Capstone Bangkit Academy 2021,yang dapat diakses melalui Github [Tim Getloc](https://github.com/AgungP88/getloc-apps). Adapun jumlah total dari dataset ialah sebanyak 10.000 data berisikan variabel-variable yaitu dummy Id pengunjung (User_Id), Id tempat wisata (Place_Id), dan rating tempat wisata (Place_Ratings). Deskripsi tentang variabel-variabel tersebut ialah sebagai berikut:
 * User_Id : berisikan sekumpulan data unik dari user atau dalam kasus dataset ini, merupakan para wisatawan
 * Place_Id : berisikan kode unik yang mempresentasikan tempat wisata di Indonesia
 * Place_Ratings : berisikan rating atau penilaian yang diberikan oleh user (wisatawan) terhadap tempat wisata yang telah dikunjungi
